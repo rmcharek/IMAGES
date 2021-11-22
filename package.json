@@ -1,0 +1,28 @@
+{
+  "name": "IMAGES",
+  "version": "1.0.0",
+  "description": "github test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rmcharek/IMAGES.git"
+  },
+  "author": "riadh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rmcharek/web-app-boilerplate/issues"
+  },
+  "homepage": "https://github.com/rmcharek/web-app-boilerplate#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "concurrently": "^6.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.2.1",
+    "nodemon": "^2.0.15"
+  }
+}
