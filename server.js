@@ -7,6 +7,49 @@ const path = require('path');
 // Create a new express application named 'app'
 const app = express();
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//const cors = require('cors');
+//const bodyParser = require('body-parser');
+const fileUpload = require('express-fileupload');
+app.use(fileUpload());
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
+/////////////////////////////////////
+app.use(express.static('datastore'));
+//server.use(express.static(path.join(__dirname, 'datastore')));
+
+app.use('/card', (req, res, next) => {
+console.log("11111111111111111111111111111");
+  debugger;
+  if (req.method === 'POST') {
+     console.log("11111111111111111111111111111");
+     console.log(req.files);
+     console.log("22222222222222222222222222222");
+     let file = req.files.image;
+     const imagedata=req.files;
+     console.log(imagedata);
+     console.log(imagedata.myFile.name);
+
+     file = imagedata.myFile;
+     const name = imagedata.myFile.name.replace(' ', '_');
+     //const image = `${name}.jpg`;
+    const image = `${name}`;
+     //file.mv(`${__dirname}/../public/${image}`);
+     //file.mv(`${__dirname}/../imagestore/${image}`);
+     file.mv(`${__dirname}/datastore/${image}`);
+     req.body.image = image;
+   
+
+  }
+  next();
+});
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 // Set our backend port to be either an environment variable or port 5000
 const port = process.env.PORT || 5000;
 
