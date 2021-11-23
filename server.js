@@ -16,9 +16,10 @@ app.use(fileUpload());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 /////////////////////////////////////
-//node app.use(express.static('datastore'));
-app.use(express.static(path.join(__dirname, 'datastore')));
-//app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static('datastore'));
+//app.use(express.static(path.join(__dirname, 'datastore')));
+//app.use(express.static(path.join(__dirname, 'datastore', 'LOGO.png')));
+
 
 app.use('/card', (req, res, next) => {
 console.log("11111111111111111111111111111");

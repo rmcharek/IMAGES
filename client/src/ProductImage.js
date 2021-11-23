@@ -84,7 +84,7 @@ const [{ alt, src }, setPreview] = useState(initialState);
 
 //const [selected, setSelected] = useState(imgs[1])
 const  imgs = [
-  '/LOGO.PNG',
+  '/LOGO.png',
   'https://res.cloudinary.com/stealthman22/image/upload/v1586308023/new-portfolio/hero/two-cargo-ships-sailing-near-city-2144905.jpg',
 ];
 
