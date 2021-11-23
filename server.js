@@ -16,8 +16,9 @@ app.use(fileUpload());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 /////////////////////////////////////
-app.use(express.static('datastore'));
-//server.use(express.static(path.join(__dirname, 'datastore')));
+//node app.use(express.static('datastore'));
+app.use(express.static(path.join(__dirname, 'datastore')));
+//app.use(express.static(path.join(__dirname, '../public')));
 
 app.use('/card', (req, res, next) => {
 console.log("11111111111111111111111111111");
@@ -26,17 +27,18 @@ console.log("11111111111111111111111111111");
      console.log("11111111111111111111111111111");
      console.log(req.files);
      console.log("22222222222222222222222222222");
-     let file = req.files.image;
+     let file = req.files.image ;
      const imagedata=req.files;
      console.log(imagedata);
      console.log(imagedata.myFile.name);
 
-     file = imagedata.myFile;
+     file = imagedata.myFile ;
      const name = imagedata.myFile.name.replace(' ', '_');
      //const image = `${name}.jpg`;
     const image = `${name}`;
      //file.mv(`${__dirname}/../public/${image}`);
      //file.mv(`${__dirname}/../imagestore/${image}`);
+     console.log("__dirname:  "+__dirname);
      file.mv(`${__dirname}/datastore/${image}`);
      req.body.image = image;
    
